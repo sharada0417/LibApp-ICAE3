@@ -7,9 +7,11 @@ app.use(express.json());
 
 const bookcontroller = require('./controller/Book');
 const studentcontroller = require('./controller/Student');
+const borrowcontroller = require('./controller/Borrow');
 
 app.use('/books',bookcontroller);
 app.use('/students',studentcontroller);
+app.use('/borrows', borrowcontroller);
 
 mongoose.connect('mongodb://127.0.0.1:27017/libappDB', {
   

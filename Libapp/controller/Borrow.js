@@ -6,7 +6,7 @@ router.post('/', async (req, res) => {
   try {
     const { studentId, bookId } = req.body;
     const borrow = await borrowBook(studentId, bookId);
-    res.status(201).json({ message: 'Book borrowed successfully', borrow });
+    res.status(201).json(borrow);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
